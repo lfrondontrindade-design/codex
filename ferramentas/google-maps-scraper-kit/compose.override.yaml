@@ -1,0 +1,8 @@
+services:
+  google-maps-scraper:
+    image: gosom/google-maps-scraper@sha256:e205c02913c5a69c16fc2094b8e5b194a2f655166d2c1126d50548d216e6b1b2
+    command: ["-data-folder", "/gmapsdata"]
+  web:
+    image: nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+    ports: !override
+      - "127.0.0.1:8081:80"
